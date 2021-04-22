@@ -1,0 +1,4 @@
+{
+    "jwtPrivateKey" : "gfast_jwtPrivateKey",
+    "db" : "gfast_db"
+}
