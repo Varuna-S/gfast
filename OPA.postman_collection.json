@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "f95623e4-ba48-4311-b098-b1af4f952a92",
+		"name": "OPA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "load the policy",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/plain",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "package policy\r\n\r\ndefault allow = false\r\n\r\nallow{\r\n\tinput.method == \"POST\"\r\n    startswith(input.api, \"/api/games\")\r\n    token.payload.isAdmin == true\r\n}\r\n\r\nallow{\r\n\tinput.method == \"PUT\"\r\n    startswith(input.api, \"/api/games\")\r\n    token.payload.isAdmin == true\r\n}\r\n\r\nallow{\r\n\tinput.method == \"PATCH\"\r\n    startswith(input.api, \"/api/games\")\r\n    token.payload.isAdmin == true\r\n}\r\n\r\nallow{\r\n\tinput.method == \"DELETE\"\r\n    startswith(input.api, \"/api/games\")\r\n    token.payload.isAdmin == true\r\n}\r\n\r\nallow{\r\n\tinput.method == \"GET\"\r\n    startswith(input.api, \"/api/games\")\r\n    token.payload.isAdmin == true\r\n}\r\n\r\nallow{\r\n\tinput.method == \"GET\"\r\n    input.api == \"/api/users\"\r\n    token.payload.isAdmin == true\r\n}\r\n\r\ntoken = { \"payload\" : payload}{\r\n[header, payload, signature] := io.jwt.decode(input.jwt)\r\n}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/v1/policies/policy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"v1",
+						"policies",
+						"policy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "example input eval",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"query\":\"data.policy.allow == false\",\r\n    \"input\":{\r\n        \"api\": \"/api/users\",\r\n        \"jwt\": \"wyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDdmZDYzNmQ5OTAwMTBjYjQ3MjU1ZTUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MTg5OTk2NDJ9.OCxA5_ZWFiZux0Ch55DlywiuUq0VGse8secqe0_ST8E\",\r\n        \"method\": \"GET\"\r\n    }\r\n    \r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/v1/data/policy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"v1",
+						"data",
+						"policy"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

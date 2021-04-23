@@ -3,9 +3,7 @@ const fp = require('fastify-plugin');
 const app = require('../app');
 
 module.exports = function setupTestEnvironment(){
-    const server = fastify({
-        logger: true
-    });
+    const server = fastify({});
     beforeAll(async () => {
         server.register(fp(app))
         await server.ready();

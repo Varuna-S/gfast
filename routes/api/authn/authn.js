@@ -1,11 +1,11 @@
 const bcrypt = require('bcrypt');
 const {User} = require('../../../models/user');
 const _ = require('lodash');
-
+const {loginOptions} = require('../../../routeOptions/authn');
 
 async function routes(fastify, options){
     //Login
-    fastify.post('/', async (request, reply) => {
+    fastify.post('/', loginOptions, async (request, reply) => {
         try{
             const user = await User.findOne({email: request.body.email});
             if(!user)

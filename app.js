@@ -8,6 +8,8 @@ module.exports = async function (fastify, opts) {
   // Place here your custom code!
   if(!config.get('jwtPrivateKey'))
       throw new Error("FATAL ERROR - jwtPrivateKey not defined");
+  if(!config.get('db'))
+      throw new Error("FATAL ERROR - database connection string not defined");
   
   // Do not touch the following lines
 

@@ -6,8 +6,8 @@ const {getMeOptions, getOptions, postOptions} = require('../../../routeOptions/u
 async function routes(fastify, options){
 
     //setting the authentication(authn) and authorization(authz) decorators for the route options
-    // getMeOptions.preHandler = fastify.auth([fastify.authn],{relation: 'and'});
-    // getOptions.preHandler = fastify.auth([fastify.authn, fastify.authz],{relation: 'and'});
+    getMeOptions.preHandler = fastify.auth([fastify.authn],{relation: 'and'});
+    getOptions.preHandler = fastify.auth([fastify.authn, fastify.authz],{relation: 'and'});
 
     //user details of the current logged in user
     fastify.get('/me', getMeOptions, async (request, reply) => {

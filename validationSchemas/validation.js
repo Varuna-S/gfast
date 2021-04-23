@@ -20,6 +20,14 @@ const signupBodySchema = {
     }
 }
 
+const loginBodySchema = {
+    type: 'object',
+    properties: {
+        email:{type:'string', format: 'email',minLength:6, maxLength:255},
+        password:{type:'string', minLength:8, maxLength:255}
+    }
+}
+
 //Joi schema for validating id in params along with body as well
 const paramsSchema = {
         id: Joi.objectId().required()  
@@ -154,6 +162,20 @@ const getMeSchema = {
     }
 }
 
+const loginSchema = {
+    body: loginBodySchema,
+    response: {
+        200: {
+            type: 'object',
+            properties:{
+                _id: { type: 'string'},
+                name:{ type: 'string'},
+                email: { type: 'string'}
+            }
+        } 
+    } 
+}
+
 // /api/games
 exports.getRequestSchema = getRequestSchema;
 exports.postRequestSchema = postRequestSchema;
@@ -164,3 +186,5 @@ exports.deleteRequestSchema = deleteRequestSchema;
 exports.signupSchema = signupSchema;
 exports.getUsersSchema = getUsersSchema;
 exports.getMeSchema = getMeSchema;
+// /api/authn
+exports.loginSchema = loginSchema;
