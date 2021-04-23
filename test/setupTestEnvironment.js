@@ -6,11 +6,11 @@ module.exports = function setupTestEnvironment(){
     const server = fastify({
         logger: true
     });
-    beforeEach(async () => {
+    beforeAll(async () => {
         server.register(fp(app))
         await server.ready();
     });
-    afterEach(async () => {
+    afterAll(async () => {
         await server.close()
     });
     return server;

@@ -10,7 +10,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "jest --coverage --detectOpenHandles",
+    "test": "jest --watch --coverage --detectOpenHandles",
     "start": "fastify start -l info app.js",
     "dev": "fastify start -w -l info -P app.js"
   },
@@ -19,6 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "@joi/date": "^2.1.0",
+    "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "config": "^3.3.6",
     "fastify": "^3.0.0",

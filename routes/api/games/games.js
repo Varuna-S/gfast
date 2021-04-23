@@ -7,7 +7,7 @@ const {getOptions, postOptions, putOptions, deleteOptions, patchOptions} = requi
 async function routes(fastify, options){
 
     //setting the authentication(authn) and authorization(authz) decorators as preHandlers for the selected route options
-    let authnAndAuthz = fastify.auth([fastify.authn, fastify.authz], {relation: 'and'}); 
+    let authnAndAuthz = fastify.auth([fastify.authn, fastify.authz], {relation: 'and'});
     postOptions.preHandler = authnAndAuthz;
     putOptions.preHandler = authnAndAuthz;
     patchOptions.preHandler = authnAndAuthz;
@@ -26,7 +26,7 @@ async function routes(fastify, options){
         }
       });
     
-    fastify.get('/:id', getOptions, async (request, reply) => {
+    fastify.get('/:id', async (request, reply) => {
         try{
         const game = await Game
             .findOne({ _id: request.params.id})

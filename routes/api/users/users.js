@@ -1,5 +1,5 @@
 const {User} = require('../../../models/user');
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 const _ = require('lodash');
 const {getMeOptions, getOptions, postOptions} = require('../../../routeOptions/users');
 

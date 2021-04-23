@@ -2,9 +2,13 @@
 
 const path = require('path')
 const AutoLoad = require('fastify-autoload')
+const config = require('config')
 
 module.exports = async function (fastify, opts) {
   // Place here your custom code!
+  if(!config.get('jwtPrivateKey'))
+      throw new Error("FATAL ERROR - jwtPrivateKey not defined");
+  
   // Do not touch the following lines
 
   // This loads all plugins defined in plugins
