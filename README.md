@@ -16,17 +16,18 @@ logged in user can send a - GET /api/users/me - to get the details of oneself
 
 admin users can GET /api/users to get the details all the users signed up
 
-API routes 
-    /api/authn POST         -  login
-    /api/users POST         -  sign up
-    /api/users/me GET       -  current user details
-    /api/users GET          -  get all users, admin privileges required for this endpoint
-    /api/games GET          -  get all games in the database
-    /api/games/:id GET      -  get the info of game with id - admin required 
-    /api/games POST         -  insert game information into the database - admin required 
-    /api/games/:id PUT      -  update game - admin required
-    /api/games/:id PATCH    -  partial update on game - admin required
-    /api/games/:id DELETE   -  delete the game with id - admin required
+Gfast
+    API routes
+        /api/authn POST         -  login
+        /api/users POST         -  sign up
+        /api/users/me GET       -  current user details
+        /api/users GET          -  get all users, admin privileges required for this endpoint
+        /api/games GET          -  get all games in the database
+        /api/games/:id GET      -  get the info of game with id - admin required 
+        /api/games POST         -  insert game information into the database - admin required 
+        /api/games/:id PUT      -  update game - admin required
+        /api/games/:id PATCH    -  partial update on game - admin required
+        /api/games/:id DELETE   -  delete the game with id - admin required
 
 NodeJs framework - fastify
 Input validations - fastify internal ajv and Joi
