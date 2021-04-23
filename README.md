@@ -29,7 +29,7 @@ admin users can GET /api/users to get the details all the users signed up
     "/api/games/:id PATCH"    -  partial update on game - admin required
     "/api/games/:id DELETE"   -  delete the game with id - admin required
 
-## Dependencies
+## Core Dependencies
     NodeJs framework    - fastify
     Input validations   - fastify internal ajv and Joi
     Testing framework   - jest
