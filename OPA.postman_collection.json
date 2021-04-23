@@ -57,7 +57,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"query\":\"data.policy.allow == false\",\r\n    \"input\":{\r\n        \"api\": \"/api/users\",\r\n        \"jwt\": \"wyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDdmZDYzNmQ5OTAwMTBjYjQ3MjU1ZTUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MTg5OTk2NDJ9.OCxA5_ZWFiZux0Ch55DlywiuUq0VGse8secqe0_ST8E\",\r\n        \"method\": \"GET\"\r\n    }\r\n    \r\n}\r\n",
+					"raw": "{\r\n    \"query\":\"data.policy.allow == false\",\r\n    \"input\":{\r\n        \"api\": \"/api/users\",\r\n        \"jwt\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDdmZDYzNmQ5OTAwMTBjYjQ3MjU1ZTUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MTg5OTk2NDJ9.OCxA5_ZWFiZux0Ch55DlywiuUq0VGse8secqe0_ST8E\",\r\n        \"method\": \"GET\"\r\n    }\r\n    \r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"

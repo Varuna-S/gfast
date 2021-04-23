@@ -17,6 +17,7 @@ async function routes(fastify, options){
             reply.header('x-auth-token', token).send(_.pick(user, ['id','name','email']));
         }
         catch(err){
+            request.log.info(err);
             throw new Error(err.message);
         }
     });

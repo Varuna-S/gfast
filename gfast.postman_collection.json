@@ -171,6 +171,19 @@
 						},
 						{
 							"name": "insert sekiro game details",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var headerValue = pm.response.json();\r",
+											"pm.environment.set('game_id', headerValue[\"_id\"]);\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "POST",
 								"header": [],

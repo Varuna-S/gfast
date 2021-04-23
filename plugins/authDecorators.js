@@ -20,6 +20,7 @@ module.exports = fastifyPlugin( function (fastify, options, next) {
   }
   catch(ex)
   {
+      request.log.info(ex);
       done(ex);
       return reply.status(401).send('Invalid token');
       
@@ -53,15 +54,21 @@ module.exports = fastifyPlugin( function (fastify, options, next) {
           response = await tiny.post(options);          
         }
         catch(err){
+            request.log.info(err);
             done(new Error("Cannot connect to policy agent"));
         }
         if(response.body.result === undefined)
+        {
+          request.log.info(err);
           done(new Error("No response from policy agent, policy might not have been loaded"));
+        }
         result = response.body.result.allow;
     }
     await evaluate();
-    if(!result)
+    if(!result){
+      request.log.info('Unauthorized Request - Forbidden');
       return reply.status(403).send({message:"Unauthorized Request - Forbidden"});
+    }
   });
   next();
 });

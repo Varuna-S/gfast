@@ -16,6 +16,7 @@ async function routes(fastify, options){
         reply.send(user);
       }
       catch(err){
+        request.log.info(err);
         throw new Error(err.message);
       } 
       });
@@ -30,6 +31,7 @@ async function routes(fastify, options){
       reply.send(users);
       }
       catch(err){
+        request.log.info(err);
         throw new Error(err.message);
       }
     });
@@ -47,6 +49,7 @@ async function routes(fastify, options){
         reply.send(_.pick(user, ['_id', 'name','email']));
       }
       catch(err){
+        request.log.info(err);
         throw new Error(err.message);
       }
     });

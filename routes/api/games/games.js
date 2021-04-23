@@ -22,6 +22,7 @@ async function routes(fastify, options){
             reply.send(games);
         }
         catch(err){
+            request.log.info(err);
             throw new Error(err.message);
         }
       });
@@ -36,7 +37,8 @@ async function routes(fastify, options){
         reply.send(game);
         }
         catch(err){
-                throw new Error(err.message);
+            request.log.info(err);
+            throw new Error(err.message);
         }
     });
 
@@ -57,6 +59,7 @@ async function routes(fastify, options){
         reply.send(game);
         }
         catch(err){
+            request.log.info(err);
             throw new Error(err.message);
         }  
     });
@@ -79,6 +82,7 @@ async function routes(fastify, options){
             reply.send(game);
         }
         catch(err){
+            request.log.info(err);
             throw new Error(err.message);
         }
     });
@@ -101,6 +105,7 @@ async function routes(fastify, options){
             reply.send(game);
         }
         catch(err){
+            request.log.info(err);
             throw new Error(err.message);
         }
     });
@@ -114,6 +119,7 @@ async function routes(fastify, options){
             reply.send(game);
         }
         catch(err){
+            request.log.info(err);
             throw new Error(err.message);
         }
     });
