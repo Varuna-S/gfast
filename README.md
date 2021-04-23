@@ -1,4 +1,5 @@
-Gfast - is the game information NodeJs application, exposes API endpoints for CRUD operations on game information, this application use fastify framework
+## Gfast 
+Gfast is the game information NodeJs application, exposes API endpoints for CRUD operations on game information, this application use fastify framework
 
 users can sign up via - POST /api/users
 
@@ -16,7 +17,7 @@ logged in user can send a - GET /api/users/me - to get the details of oneself
 
 admin users can GET /api/users to get the details all the users signed up
 
-API routes
+## API routes
     "/api/authn POST"        -  login
     "/api/users POST"        -  sign up
     "/api/users/me GET"       -  current user details
@@ -28,13 +29,14 @@ API routes
     "/api/games/:id PATCH"    -  partial update on game - admin required
     "/api/games/:id DELETE"   -  delete the game with id - admin required
 
-NodeJs framework - fastify
-Input validations - fastify internal ajv and Joi
-Testing framework - jest
-Database - MongoDB
-Authorization agent - Open Policy Agent
+## Dependencies
+    NodeJs framework    - fastify
+    Input validations   - fastify internal ajv and Joi
+    Testing framework   - jest
+    Database            - MongoDB
+    Authorization agent - Open Policy Agent
 
-Installation and Running
+## Installation and Running
     Prerequisites - NodeJs, MongoDB, Docker, Postman, MongoDB compass, Git 
 
     Setting up node app
