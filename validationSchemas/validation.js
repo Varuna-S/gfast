@@ -182,7 +182,7 @@ exports.postRequestSchema = postRequestSchema;
 exports.putRequestSchema = putRequestSchema;
 exports.patchRequestSchema = patchRequestSchema;
 exports.deleteRequestSchema = deleteRequestSchema;
-// / api/users
+// /api/users
 exports.signupSchema = signupSchema;
 exports.getUsersSchema = getUsersSchema;
 exports.getMeSchema = getMeSchema;

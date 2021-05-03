@@ -60,7 +60,7 @@ admin users can GET /api/users to get the details all the users signed up
 
     Setting up Open Policy Agent on Docker
 
-        "docker run -p 8181:8181 openpolicyagent/opa  eval --server --log-level debug"   (setting up OPA in docker container)
+        "docker run -p 8181:8181 openpolicyagent/opa run --server --log-level debug"   (setting up OPA in docker container)
 
         open postman and import "OPA.postman_collection.json" file to the collections
 
@@ -83,13 +83,3 @@ admin users can GET /api/users to get the details all the users signed up
         "$env:NODE_ENV='test'" - set the node environment to test
 
         "npm test" - to the run the tests
-
-
-
-
-
-
-
-
-
-
